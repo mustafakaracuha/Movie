@@ -1,0 +1,147 @@
+<mvc:View
+    controllerName="SapUI5Tutorial.Application.Main.views.StartUp.controller.moveuı"
+    height="100%"
+    displayBlock="true"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns="sap.m"
+    xmlns:u="sap.ui.unified"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:grid="sap.ui.layout.cssgrid"
+    xmlns:f="sap.f">
+    <App>
+        <Page showHeader="false" class="bgcolor-page"> 
+            <HBox class="_main">
+                <FlexBox class="left_main">
+                    <VBox class="languagev">
+                        <List items="{path: '/genreModel'}" class="sapUiLargeMarginBegin">
+                            <CustomListItem class="customlist-genre">
+                                <VBox class="">
+                                    <Text text="{name}" class="genre-text-style"/>
+                                    <Link text="{first_genre}" class="genre-link-style"/>
+                                    <Link text="{second_genre}" class="genre-link-style"/>
+                                    <Link text="{third_genre}" class="genre-link-style"/>
+                                    <Link text="{fourth_genre}" class="genre-link-style"/>
+                                    <Link text="{fifth_genre}" class="genre-link-style"/>
+                                    <Link text="{sixth_genre}" class="genre-link-style"/>
+                                    <Link text="{seventh_genre}" class="genre-link-style"/>
+                                </VBox>
+                            </CustomListItem>
+                        </List>
+                        <List items="{path: '/languageModel'}" class="sapUiLargeMarginBegin">
+                            <CustomListItem class="customlist-genre">
+                                <VBox class="">
+                                    <Text text="{name}" class="genre-text-style"/>
+                                    <Link text="{first_langu}" class="genre-link-style"/>
+                                    <Link text="{second_langu}" class="genre-link-style"/>
+                                    <Link text="{third_langu}" class="genre-link-style"/>
+                                    <Link text="{fourth_langu}" class="genre-link-style"/>
+                                    <Link text="{fifth_langu}" class="genre-link-style"/>
+                                    <Link text="{sixth_langu}" class="genre-link-style"/>
+                                    <Link text="{seventh_langu}" class="genre-link-style"/>
+                                </VBox>
+                            </CustomListItem>
+                        </List>
+                    </VBox>
+                </FlexBox>
+                <FlexBox class="center_main">
+                    <l:FixFlex class="fixFlex-styles">
+                        <l:fixContent>
+                            <SearchField
+                                class="sapUiSmallMargin"
+                                placeholder="Search any movies or tv shows"/>
+                        </l:fixContent>
+                        <l:flexContent>
+                        
+                            <ScrollContainer
+                                height="100%"
+                                width="100%"
+                                horizontal="false"
+                                vertical="true"
+                                focusable="false"
+                                class="sapUiNoContentPadding">
+                                <HBox class="weekly-scndmargin-style">
+                                    <Text text="Weekly Top Rated Movies" class="weekly-style"/>
+                                    <Link text="See More" class="seemore-style"/>
+                                </HBox>
+                            
+                                <l:Grid
+                                    defaultSpan="XL3 L4 M6 S12"
+                                    hSpacing="0"
+                                    vSpacing="0"
+                                    class="bg-line"
+                                    content="{/movıeModel}">
+                                    <VBox class="posterstyle">
+                                        <Image src="{posterurl}" class="poster-size" press="NewDialogPress"></Image>
+                                        <Link text="{title}" class="poster-title-style" press="NewDialogPress"/>
+                                        <HBox>
+                                            <core:Icon src="sap-icon://favorite" class="ratingicon-style"></core:Icon>
+                                            <Text text="{imdbRating}" class="poster-rating-style"/>
+                                        </HBox>
+                                        <customData>
+                                            <core:CustomData key="movıe" value="{class}" writeToDom="true"/>
+                                        </customData>
+                                    </VBox>
+                                </l:Grid>
+                                <HBox class="weekly-margin-style">
+                                    <Text text="Weekly Top Rated Bollywood Movies" class="weekly-second-style"/>
+                                    <Link text="See More" class="seemore-second-style"/>
+                                </HBox>
+                                <l:Grid
+                                    defaultSpan="XL3 L4 M6 S12"
+                                    hSpacing="0"
+                                    vSpacing="0"
+                                    class="bg-line"
+                                    content="{/firstmovies}">
+                                    <VBox class="posterstyle">
+                                        <Image src="{posterurl}" class="poster-size"  press="NewDialogPress"></Image>
+                                        <Link text="{title}" class="poster-title-style" press="NewDialogPress"/>
+                                        <HBox>
+                                            <core:Icon src="sap-icon://favorite" class="ratingicon-style"></core:Icon>
+                                            <Text text="{imdbRating}" class="poster-rating-style"/>
+                                        </HBox>
+                                    </VBox>
+                                </l:Grid>
+                                  
+                            </ScrollContainer>
+                        </l:flexContent>
+                    </l:FixFlex>
+                </FlexBox>
+                <FlexBox class="right_main">
+                    <l:FixFlex class="fixFlex-styles">
+                        <l:fixContent>
+                            <Text text="New Trailers" class="newTrailertext-style"/>
+                        </l:fixContent>
+                        <l:flexContent>
+                            <ScrollContainer
+                                height="100%"
+                                width="64%"
+                                horizontal="false"
+                                vertical="true"
+                                focusable="false"
+                                class="sapUiNoContentPadding">
+                                <l:Grid
+                                    defaultSpan="XL9 L4 M6 S12"
+                                    hSpacing="0"
+                                    vSpacing="0"
+                                    class=""
+                                    content="{/secondmovies}">
+                                    <VBox class="newtrposter-style">
+                                        <Image src="{posterurl}" class="new-trailerposter-style"></Image>
+                                        <Link text="{title}" wrapping="true" class="new-trailertitle-style"/>
+                                      <Link text="{title}" wrapping="true" class="new-trailertitle-style"/>
+                                    </VBox>
+                                    
+                                </l:Grid>
+                                
+                            </ScrollContainer>
+                            
+                        </l:flexContent>
+                    </l:FixFlex>
+
+                </FlexBox>
+            </HBox>
+
+        </Page>
+    </App>
+</mvc:View>

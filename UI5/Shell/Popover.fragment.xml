@@ -1,0 +1,19 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Dialog class="dialogradius">
+        <VBox>
+            
+            <Label text="{city}" class="dialogclass"/>
+            <Label text="{county}" class="dialogclass"/>
+            <Label text="{revenue}" class="dialogclass"/>
+            <Label text="{state}" class="dialogclass"/>
+          
+     
+     
+        <Button text="Kapat"  class="newdialog" press="CloseDialogPress"/>
+        </VBox>
+
+    </Dialog>
+
+
+
+</core:FragmentDefinition>
